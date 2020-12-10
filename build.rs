@@ -19,7 +19,7 @@ extern crate cmake;
 use cmake::Config;
 
 fn build_link_evmc_tools() {
-    let dst = Config::new("../../../").build();
+    let dst = Config::new("evmc").build();
     let evmc_path = Path::new(&dst).join("build/lib/loader");
     println!("cargo:rustc-link-search=native={}", evmc_path.display());
     println!("cargo:rustc-link-lib=static=evmc-loader");
